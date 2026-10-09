@@ -3,6 +3,6 @@
   "description": "A school district gradebook that asks for a password, then lets you upload and open binary gradebook files that it maps into memory and parses.",
   "question": "Retrieve the flag from the challenge service.",
   "category": "PWN",
-  "difficulty": 4,
+  "difficulty": 3,
   "evidence_kind": "SECRET"
 }
