@@ -1,0 +1,60 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Exploit the gradebook parser to get code execution and read /flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2023-gradebook}",
+      "hints": [
+        "The gradebook is a binary file you upload, and the program maps it into memory.",
+        "Which fields of the file does the parser trust as positions in memory?"
+      ],
+      "steps": [
+        {
+          "key": "syscall",
+          "title": "Find how the file is loaded",
+          "prompt": "Which system call maps the uploaded gradebook into memory?",
+          "check": {
+            "answer": [
+              "mmap",
+              "mmap2"
+            ]
+          }
+        },
+        {
+          "key": "trust",
+          "title": "Find what is trusted",
+          "prompt": "What kind of values from the file does the parser use without checking? (what they point to)",
+          "check": {
+            "answer": [
+              "offsets",
+              "offset",
+              "pointers",
+              "pointer",
+              "addresses"
+            ]
+          }
+        },
+        {
+          "key": "bug",
+          "title": "Name the bug",
+          "prompt": "What memory-safety bug class do unchecked offsets give?",
+          "check": {
+            "answer": [
+              "out-of-bounds",
+              "out of bounds",
+              "oob",
+              "out-of-bounds write",
+              "arbitrary write",
+              "out-of-bounds read"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

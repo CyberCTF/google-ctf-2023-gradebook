@@ -1,7 +1,7 @@
 {
   "title": "Google CTF 2023: Gradebook",
   "description": "A school district gradebook that asks for a password, then lets you upload and open binary gradebook files that it maps into memory and parses.",
-  "question": "Retrieve the flag from the challenge service.",
+  "question": "Exploit the gradebook file parser to get code execution and read /flag.",
   "category": "PWN",
   "difficulty": 3,
   "evidence_kind": "SECRET"
