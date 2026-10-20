@@ -1,8 +1,11 @@
 {
+  "project_name": "cyberlabs-google-ctf-2023-gradebook",
+  "slug": "google-ctf-2023-gradebook",
   "title": "Google CTF 2023: Gradebook",
   "description": "A school district gradebook that asks for a password, then lets you upload and open binary gradebook files that it maps into memory and parses.",
-  "question": "Exploit the gradebook file parser to get code execution and read /flag.",
-  "category": "PWN",
+  "category": "pwn",
   "difficulty": 3,
-  "evidence_kind": "SECRET"
+  "evidence_kind": "SECRET",
+  "capabilities": [],
+  "question": "Exploit the gradebook file parser to get code execution and read /flag."
 }
